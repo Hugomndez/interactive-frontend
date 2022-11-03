@@ -1,0 +1,136 @@
+.container {
+  position: relative;
+  width: 343px;
+  height: 246px;
+  top: 100%;
+  transform: translateY(-85%);
+  filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+}
+
+.cardBack {
+  top: 0;
+  right: 0;
+}
+
+.cardFront {
+  z-index: 1;
+  top: 36%;
+  left: 0;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+}
+
+.logo,
+.number,
+.holderName,
+.expirationDate,
+.cvc {
+  position: absolute;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: inherit;
+  color: var(--White);
+}
+
+.logo {
+  top: 10px;
+  left: 10px;
+}
+
+.number {
+  bottom: 40px;
+  left: 10px;
+  line-height: 2.3rem;
+  letter-spacing: 2.2px;
+}
+
+.holderName {
+  bottom: 15px;
+  left: 10px;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+}
+
+.expirationDate {
+  bottom: 15px;
+  right: 10px;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 1.28571px;
+}
+
+.cvc {
+  top: 72px;
+  right: 35px;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 1.28571px;
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    width: 541px;
+    height: 527px;
+    top: initial;
+    left: 100%;
+    transform: translateX(-60%);
+  }
+
+  .cardBack {
+    top: initial;
+    bottom: 0;
+  }
+
+  .cardFront {
+    top: 0;
+  }
+  .cardFront img,
+  .cardBack img {
+    width: 447px;
+    height: 245px;
+  }
+
+  .logo {
+    top: 28px;
+    left: 32px;
+  }
+
+  .number {
+    bottom: 58px;
+    left: 32px;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    letter-spacing: 3.42222px;
+  }
+
+  .holderName {
+    bottom: 25px;
+    left: 32px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .expirationDate {
+    bottom: 25px;
+    right: 25px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .cvc {
+    top: 112px;
+    right: 55px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.2rem;
+  }
+}

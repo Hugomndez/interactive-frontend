@@ -1,0 +1,183 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--VeryDarkViolet);
+}
+
+.form input:not(input[type='submit']) {
+  height: 45px;
+  padding-inline: 16px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: capitalize;
+  color: var(--VeryDarkViolet);
+  background: var(--White);
+  border: 1px solid var(--LightGrayishViolet);
+  border-radius: 8px;
+}
+
+.form label:has(.invalid) > input {
+  border: 1px solid var(--InputError);
+}
+
+.form input::placeholder {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: lowercase;
+  color: var(--LightGrayishViolet);
+}
+
+.formFieldset {
+  display: flex;
+  gap: 8px;
+}
+
+.form fieldset {
+  display: flex;
+  gap: 8px;
+  border: none;
+}
+
+.form fieldset legend {
+  margin-block-end: 9px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--VeryDarkViolet);
+}
+
+.form .date {
+  width: 75px;
+  height: 45px;
+  padding-inline: 10px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  color: var(--LightGrayishViolet);
+  background: var(--White);
+  border: 1px solid var(--LightGrayishViolet);
+  border-radius: 8px;
+  appearance: none;
+}
+
+.form .date::placeholder {
+  text-transform: uppercase;
+}
+
+.form .inputCvc {
+  width: 100%;
+  min-width: 10ch;
+}
+
+.form .invalid {
+  font-size: 1.2rem;
+  text-transform: none;
+  color: var(--InputError);
+}
+
+.form input[type='submit'] {
+  height: 53px;
+  margin-block-start: 20px;
+  border: none;
+  border-radius: 8px;
+  color: var(--White);
+  background-color: var(--VeryDarkViolet);
+}
+
+.form input[type='submit']:disabled {
+  color: var(--DarkGrayishViolet);
+  background-color: var(--LightGrayishViolet);
+}
+
+.form input[type='submit']:hover,
+.form input[type='submit']:focus {
+  color: var(--White);
+  background-color: hsl(278, 68%, 11%, 0.9);
+}
+
+.form input[type='submit']:active {
+  color: var(--White);
+  background-color: var(--ActiveInputBorder-2);
+}
+
+.onSubmitSuccessful {
+  width: 100%;
+  max-width: 381px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.onSubmitSuccessful svg {
+  margin-block-end: 35px;
+}
+
+.onSubmitSuccessful h1 {
+  margin-block-end: 16px;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 3.42222px;
+  color: var(--VeryDarkViolet);
+}
+
+.onSubmitSuccessful p {
+  margin-block-end: 48px;
+  line-height: 23px;
+  color: var(--DarkGrayishViolet);
+}
+
+.onSubmitSuccessful button {
+  width: 100%;
+  height: 53px;
+  border: none;
+  border-radius: 8px;
+  color: var(--White);
+  background-color: var(--VeryDarkViolet);
+}
+
+.onSubmitSuccessful button:focus,
+.onSubmitSuccessful button:hover {
+  background-color: hsl(278, 68%, 11%, 0.9);
+}
+
+.onSubmitSuccessful button:active {
+  color: var(--White);
+  background-color: var(--ActiveInputBorder-2);
+}
+
+@media screen and (max-width: 290px) {
+  .formFieldset {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .form {
+    width: 381px;
+    gap: 26px;
+  }
+
+  .form fieldset {
+    gap: 10px;
+  }
+
+  .form .date {
+    width: 80px;
+  }
+}

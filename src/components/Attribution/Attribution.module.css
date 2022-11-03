@@ -1,0 +1,10 @@
+.attribution {
+  margin-block: 15px;
+  padding-inline: 40px;
+  font-size: 1.1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}

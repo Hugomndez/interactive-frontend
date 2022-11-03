@@ -1,0 +1,61 @@
+:root {
+  /* COLORS */
+
+  /* Primary */
+  --ActiveInputBorder-1: hsl(249, 99%, 64%);
+  --ActiveInputBorder-2: hsl(278, 94%, 30%);
+  --InputError: hsl(0, 100%, 66%);
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --LightGrayishViolet: hsl(270, 3%, 87%);
+  --DarkGrayishViolet: hsl(278, 6%, 55%, 1);
+  --VeryDarkViolet: hsl(278, 68%, 11%, 1);
+
+  /*  TYPOGRAPHY */
+
+  --FF-Primary: 'Space Grotesk', sans-serif;
+  --Paragraph: 1.8rem;
+  --FW: 500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--FF-Primary);
+  font-size: var(--Paragraph);
+  font-weight: var(--FW);
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  outline-color: #610595;
+}
+
+input:hover {
+  outline-color: #610595;
+}
+
+img {
+  display: block;
+}
