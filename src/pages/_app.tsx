@@ -1,8 +1,25 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { type AppProps } from 'next/app';
+import { Space_Grotesk } from 'next/font/google';
+import '../styles/globals.css';
+
+const spaceGrotesk = Space_Grotesk({
+  weight: '500',
+  style: 'normal',
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <style
+        jsx
+        global>{`
+        html {
+          font-family: ${spaceGrotesk.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

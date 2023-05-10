@@ -1,14 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang='en' dir='ltr'>
-      <Head>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap'
-          rel='stylesheet'
-        />
-      </Head>
+    <Html
+      lang='en'
+      dir='ltr'>
+      <Head />
       <body>
         <Main />
         <NextScript />

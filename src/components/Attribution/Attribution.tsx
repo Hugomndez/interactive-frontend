@@ -7,8 +7,7 @@ const Attribution = () => {
       <a
         href='https://www.frontendmentor.io?ref=challenge'
         target='_blank'
-        rel='noreferrer'
-      >
+        rel='noreferrer'>
         Frontend Mentor
       </a>
       . Coded by <a href='https://hugomendez.dev'>Hugo Méndez</a>.

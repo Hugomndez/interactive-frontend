@@ -1,4 +1,4 @@
-import type { DefaultValues } from 'react-hook-form';
+import { type DefaultValues } from 'react-hook-form';
 
 export type FormInputs = {
   number: string;

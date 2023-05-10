@@ -1,16 +1,14 @@
-import type { ChangeEvent } from 'react';
-import type { SubmitHandler } from 'react-hook-form';
-import { useFormContext } from 'react-hook-form';
-import type { F, FormInputs } from '../../types/formTypes';
+import { type ChangeEvent } from 'react';
+import { useFormContext, type SubmitHandler } from 'react-hook-form';
+import { type F, type FormInputs } from 'types/formTypes';
 import styles from './CardForm.module.css';
 
 const CardForm = () => {
-  const { register, handleSubmit, reset, setValue, formState } =
-    useFormContext<FormInputs>();
+  const { register, handleSubmit, reset, setValue, formState } = useFormContext<FormInputs>();
 
   const { errors, isDirty, isValid, isSubmitSuccessful } = formState;
 
-  const onSubmit: SubmitHandler<FormInputs> = data => console.log('Successful');
+  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log('Successful');
 
   const formatValue = (e: ChangeEvent<HTMLInputElement>, InputName: F) => {
     const limit = {
@@ -21,9 +19,7 @@ const CardForm = () => {
       cvc: 3,
     }[InputName];
 
-    let formattedValue = e.currentTarget.value
-      .replace(/ /g, '')
-      .replace(/\D/g, '');
+    let formattedValue = e.currentTarget.value.replace(/ /g, '').replace(/\D/g, '');
 
     if (formattedValue.length > limit) {
       formattedValue = formattedValue.slice(0, limit);
@@ -50,10 +46,18 @@ const CardForm = () => {
         width='80'
         height='80'
         fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <circle cx='40' cy='40' r='40' fill='url(#a)' />
-        <path d='M28 39.92 36.08 48l16-16' stroke='#fff' strokeWidth='3' />
+        xmlns='http://www.w3.org/2000/svg'>
+        <circle
+          cx='40'
+          cy='40'
+          r='40'
+          fill='url(#a)'
+        />
+        <path
+          d='M28 39.92 36.08 48l16-16'
+          stroke='#fff'
+          strokeWidth='3'
+        />
         <defs>
           <linearGradient
             id='a'
@@ -61,21 +65,27 @@ const CardForm = () => {
             y1='11.507'
             x2='0'
             y2='91.507'
-            gradientUnits='userSpaceOnUse'
-          >
+            gradientUnits='userSpaceOnUse'>
             <stop stopColor='#6348FE' />
-            <stop offset='1' stopColor='#610595' />
+            <stop
+              offset='1'
+              stopColor='#610595'
+            />
           </linearGradient>
         </defs>
       </svg>
       <h1>Thank you!</h1>
       <p>We’ve added your card details</p>
-      <button type='button' onClick={() => reset()}>
+      <button
+        type='button'
+        onClick={() => reset()}>
         Continue
       </button>
     </div>
   ) : (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit(onSubmit)}>
       <label>
         cardholder name
         <input
@@ -89,9 +99,7 @@ const CardForm = () => {
             },
           })}
         />
-        {errors.holderName && (
-          <span className={styles.invalid}>{errors.holderName.message}</span>
-        )}
+        {errors.holderName && <span className={styles.invalid}>{errors.holderName.message}</span>}
       </label>
       <label>
         card number
@@ -106,20 +114,14 @@ const CardForm = () => {
             },
           })}
         />
-        {errors.number && (
-          <span className={styles.invalid}>{errors.number.message}</span>
-        )}
+        {errors.number && <span className={styles.invalid}>{errors.number.message}</span>}
       </label>
       <div className={styles.formFieldset}>
         <fieldset>
           <legend>exp. date (mm/yy)</legend>
           <label>
             <input
-              className={
-                errors.expMonth
-                  ? `${styles.date} ${styles.invalid}`
-                  : styles.date
-              }
+              className={errors.expMonth ? `${styles.date} ${styles.invalid}` : styles.date}
               type='tel'
               placeholder='MM'
               {...register('expMonth', {
@@ -136,16 +138,12 @@ const CardForm = () => {
           </label>
           <label>
             <input
-              className={
-                errors.expYear
-                  ? `${styles.date} ${styles.invalid}`
-                  : styles.date
-              }
+              className={errors.expYear ? `${styles.date} ${styles.invalid}` : styles.date}
               type='tel'
               placeholder='YY'
               {...register('expYear', {
                 required: "Can't be blank",
-                validate: v => isValidYear(v) || 'Invalid year',
+                validate: (v) => isValidYear(v) || 'Invalid year',
                 onChange: (e: ChangeEvent<HTMLInputElement>) => {
                   formatValue(e, 'expYear');
                 },
@@ -156,11 +154,7 @@ const CardForm = () => {
         <label>
           cvc
           <input
-            className={
-              errors.cvc
-                ? `${styles.inputCvc} ${styles.invalid}`
-                : styles.inputCvc
-            }
+            className={errors.cvc ? `${styles.inputCvc} ${styles.invalid}` : styles.inputCvc}
             type='tel'
             placeholder='e.g. 123'
             {...register('cvc', {
@@ -183,7 +177,11 @@ const CardForm = () => {
       ) : errors.cvc ? (
         <span className={styles.invalid}>{errors.cvc.message}</span>
       ) : null}
-      <input type='submit' value='Confirm' disabled={!isDirty || !isValid} />
+      <input
+        type='submit'
+        value='Confirm'
+        disabled={!isDirty || !isValid}
+      />
     </form>
   );
 };
