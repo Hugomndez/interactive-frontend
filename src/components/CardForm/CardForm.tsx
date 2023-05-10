@@ -99,7 +99,11 @@ const CardForm = () => {
             },
           })}
         />
-        {errors.holderName && <span className={styles.invalid}>{errors.holderName.message}</span>}
+        {errors.holderName ? (
+          <span className={styles.invalid}>{errors.holderName.message}</span>
+        ) : (
+          <>&nbsp;</>
+        )}
       </label>
       <label>
         card number
@@ -114,7 +118,11 @@ const CardForm = () => {
             },
           })}
         />
-        {errors.number && <span className={styles.invalid}>{errors.number.message}</span>}
+        {errors.number ? (
+          <span className={styles.invalid}>{errors.number.message}</span>
+        ) : (
+          <>&nbsp;</>
+        )}
       </label>
       <div className={styles.formFieldset}>
         <fieldset>
@@ -176,7 +184,9 @@ const CardForm = () => {
         <span className={styles.invalid}>{errors.expYear.message}</span>
       ) : errors.cvc ? (
         <span className={styles.invalid}>{errors.cvc.message}</span>
-      ) : null}
+      ) : (
+        <span style={{ fontSize: '1.2rem' }}>&nbsp;</span>
+      )}
       <input
         type='submit'
         value='Confirm'
