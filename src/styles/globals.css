@@ -14,7 +14,6 @@
 
   /*  TYPOGRAPHY */
 
-  --FF-Primary: 'Space Grotesk', sans-serif;
   --Paragraph: 1.8rem;
   --FW: 500;
 }
@@ -33,7 +32,6 @@ html {
 }
 
 body {
-  font-family: var(--FF-Primary);
   font-size: var(--Paragraph);
   font-weight: var(--FW);
   font-style: normal;

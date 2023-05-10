@@ -1,7 +1,7 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { useWatch } from 'react-hook-form';
-import { cardBackImg } from './cardBackImg';
 import styles from './CardDetails.module.css';
+import { cardBackImg } from './cardBackImg';
 import { cardFrontImg } from './cardFrontImg';
 
 const CardDetails = () => {
@@ -18,15 +18,25 @@ export default CardDetails;
 const CardFront = () => {
   return (
     <div className={styles.cardFront}>
-      <Image src={cardFrontImg} width={286} height={157} alt='' />
+      <Image
+        src={cardFrontImg}
+        width={286}
+        height={157}
+        alt=''
+      />
       <svg
         className={styles.logo}
         width='84'
         height='47'
         fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <ellipse cx='23.478' cy='23.5' rx='23.478' ry='23.5' fill='#fff' />
+        xmlns='http://www.w3.org/2000/svg'>
+        <ellipse
+          cx='23.478'
+          cy='23.5'
+          rx='23.478'
+          ry='23.5'
+          fill='#fff'
+        />
         <path
           d='M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z'
           stroke='#fff'
@@ -42,7 +52,12 @@ const CardFront = () => {
 const CardBack = () => {
   return (
     <div className={styles.cardBack}>
-      <Image src={cardBackImg} width={286} height={157} alt='' />
+      <Image
+        src={cardBackImg}
+        width={286}
+        height={157}
+        alt=''
+      />
       <CVC />
     </div>
   );

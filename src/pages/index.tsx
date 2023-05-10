@@ -1,13 +1,16 @@
-import type { NextPage } from 'next';
+import { CardLayout } from 'components';
+import { type NextPage } from 'next';
 import Head from 'next/head';
-import { CardLayout } from '../components';
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>Frontend Mentor | Interactive details form</title>
-        <meta name='description' content='Frontend Mentor challenge' />
+        <meta
+          name='description'
+          content='Frontend Mentor challenge'
+        />
         <link
           rel='icon'
           type='image/png'
