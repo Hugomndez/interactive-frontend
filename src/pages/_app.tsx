@@ -5,6 +5,7 @@ import '../styles/globals.css';
 const spaceGrotesk = Space_Grotesk({
   weight: '500',
   style: 'normal',
+  subsets: ['latin'],
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
