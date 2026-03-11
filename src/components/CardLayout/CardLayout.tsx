@@ -1,6 +1,9 @@
-import { Attribution, CardDetails, CardForm } from 'components';
+'use client';
+import { Attribution } from '@/components/Attribution';
+import { CardDetails } from '@/components/CardDetails';
+import { CardForm } from '@/components/CardForm';
+import { initialValues, type FormInputs } from '@/types';
 import { FormProvider, useForm } from 'react-hook-form';
-import { initialValues, type FormInputs } from 'types/formTypes';
 import styles from './CardLayout.module.css';
 
 const CardLayout = () => {

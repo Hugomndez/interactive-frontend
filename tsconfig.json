@@ -15,7 +15,12 @@
     "jsx": "react-jsx",
     "incremental": true,
     "verbatimModuleSyntax": true,
-    "baseUrl": "src",
+    "paths": {
+      "@/fonts": ["./src/fonts"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/types": ["./src/types"]
+    },
     "plugins": [
       {
         "name": "next"

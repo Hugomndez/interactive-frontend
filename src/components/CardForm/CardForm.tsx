@@ -1,6 +1,6 @@
+import type { F, FormInputs } from '@/types';
 import { type ChangeEvent } from 'react';
 import { useFormContext, type SubmitHandler } from 'react-hook-form';
-import { type F, type FormInputs } from 'types/formTypes';
 import styles from './CardForm.module.css';
 
 const CardForm = () => {
@@ -8,7 +8,7 @@ const CardForm = () => {
 
   const { errors, isDirty, isValid, isSubmitSuccessful } = formState;
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log('Successful');
+  const onSubmit: SubmitHandler<FormInputs> = (_data) => console.log('Successful');
 
   const formatValue = (e: ChangeEvent<HTMLInputElement>, InputName: F) => {
     const limit = {
