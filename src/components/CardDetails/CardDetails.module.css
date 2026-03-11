@@ -4,7 +4,7 @@
   height: 246px;
   top: 100%;
   transform: translateY(-85%);
-  filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+  filter: drop-shadow(0px 39px 60px rgb(0 0 0 / 0.142481));
 }
 
 .cardBack {

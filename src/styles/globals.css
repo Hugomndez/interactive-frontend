@@ -2,20 +2,19 @@
   /* COLORS */
 
   /* Primary */
-  --ActiveInputBorder-1: hsl(249, 99%, 64%);
-  --ActiveInputBorder-2: hsl(278, 94%, 30%);
-  --InputError: hsl(0, 100%, 66%);
+  --ActiveInputBorder-1: hsl(249 99 64);
+  --ActiveInputBorder-2: hsl(278 94 30);
+  --InputError: hsl(0 100 66);
 
   /* Neutral */
-  --White: hsl(0, 0%, 100%);
-  --LightGrayishViolet: hsl(270, 3%, 87%);
-  --DarkGrayishViolet: hsl(278, 6%, 55%, 1);
-  --VeryDarkViolet: hsl(278, 68%, 11%, 1);
+  --White: hsl(0 0 100);
+  --LightGrayishViolet: hsl(270 3 87);
+  --DarkGrayishViolet: hsl(278 6 55);
+  --VeryDarkViolet: hsl(278 68 11);
 
   /*  TYPOGRAPHY */
-
-  --Paragraph: 1.8rem;
-  --FW: 500;
+  --base-paragraph-font-size: 1.8rem;
+  --base-font-weight: 500;
 }
 
 *,
@@ -32,8 +31,8 @@ html {
 }
 
 body {
-  font-size: var(--Paragraph);
-  font-weight: var(--FW);
+  font-size: var(--base-paragraph-font-size);
+  font-weight: var(--base-font-weight);
   font-style: normal;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,11 +46,11 @@ button {
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
-  outline-color: #610595;
+  outline-color: hsl(278 94 30);
 }
 
 input:hover {
-  outline-color: #610595;
+  outline-color: hsl(278 94 30);
 }
 
 img {
