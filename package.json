@@ -2,26 +2,35 @@
   "name": "interactive-frontend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
+    "build:analyze": "next experimental-analyze",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --cache --cache-location .next/cache/eslint/",
+    "lint:fix": "eslint --fix",
+    "lint:inspect": "eslint --inspect-config",
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "next": "13.4.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "7.43.9"
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hook-form": "7.71.2"
   },
   "devDependencies": {
-    "@types/node": "20.1.1",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "eslint": "8.40.0",
-    "eslint-config-next": "13.4.1",
-    "prettier": "2.8.8",
-    "typescript": "5.0.4"
+    "@types/node": "25.4.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.1.6",
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "resolutions": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
   }
 }
