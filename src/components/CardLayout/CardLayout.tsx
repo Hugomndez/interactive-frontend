@@ -15,6 +15,7 @@ const initialValues = {
 } as const satisfies FormInputs;
 
 const CardLayout = () => {
+  'use no memo';
   const methods = useForm<FormInputs>({
     mode: 'onChange',
     delayError: 800,
