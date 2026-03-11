@@ -27,6 +27,7 @@
   background: var(--White);
   border: 1px solid var(--LightGrayishViolet);
   border-radius: 8px;
+  caret-color: hsl(278 94 30);
 }
 
 .form label:has(.invalid) > input {
