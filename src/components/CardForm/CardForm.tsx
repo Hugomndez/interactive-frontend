@@ -1,16 +1,16 @@
-import type { F, FormInputs } from '@/types';
-import { type ChangeEvent } from 'react';
+import type { FormInputs } from '@/types';
+import type { ChangeEvent } from 'react';
 import { useFormContext, type SubmitHandler } from 'react-hook-form';
 import styles from './CardForm.module.css';
 
 const CardForm = () => {
   const { register, handleSubmit, reset, setValue, formState } = useFormContext<FormInputs>();
 
-  const { errors, isDirty, isValid, isSubmitSuccessful } = formState;
+  const { errors, isSubmitSuccessful } = formState;
 
   const onSubmit: SubmitHandler<FormInputs> = (_data) => console.log('Successful');
 
-  const formatValue = (e: ChangeEvent<HTMLInputElement>, InputName: F) => {
+  const formatValue = (e: ChangeEvent<HTMLInputElement>, InputName: keyof FormInputs) => {
     const limit = {
       number: 16,
       holderName: 0,
@@ -26,7 +26,7 @@ const CardForm = () => {
     }
 
     if (InputName === 'number') {
-      formattedValue = formattedValue.match(/.{1,4}/g)?.join(' ')!;
+      formattedValue = formattedValue.match(/.{1,4}/g)?.join(' ') || '';
     }
 
     setValue(InputName, formattedValue);
@@ -42,38 +42,7 @@ const CardForm = () => {
 
   return isSubmitSuccessful ? (
     <div className={styles.onSubmitSuccessful}>
-      <svg
-        width='80'
-        height='80'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'>
-        <circle
-          cx='40'
-          cy='40'
-          r='40'
-          fill='url(#a)'
-        />
-        <path
-          d='M28 39.92 36.08 48l16-16'
-          stroke='#fff'
-          strokeWidth='3'
-        />
-        <defs>
-          <linearGradient
-            id='a'
-            x1='-23.014'
-            y1='11.507'
-            x2='0'
-            y2='91.507'
-            gradientUnits='userSpaceOnUse'>
-            <stop stopColor='#6348FE' />
-            <stop
-              offset='1'
-              stopColor='#610595'
-            />
-          </linearGradient>
-        </defs>
-      </svg>
+      <Icon />
       <h1>Thank you!</h1>
       <p>We’ve added your card details</p>
       <button
@@ -190,10 +159,44 @@ const CardForm = () => {
       <input
         type='submit'
         value='Confirm'
-        disabled={!isDirty || !isValid}
       />
     </form>
   );
 };
 
 export default CardForm;
+
+const Icon = () => (
+  <svg
+    width='80'
+    height='80'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'>
+    <circle
+      cx='40'
+      cy='40'
+      r='40'
+      fill='url(#a)'
+    />
+    <path
+      d='M28 39.92 36.08 48l16-16'
+      stroke='#fff'
+      strokeWidth='3'
+    />
+    <defs>
+      <linearGradient
+        id='a'
+        x1='-23.014'
+        y1='11.507'
+        x2='0'
+        y2='91.507'
+        gradientUnits='userSpaceOnUse'>
+        <stop stopColor='#6348FE' />
+        <stop
+          offset='1'
+          stopColor='#610595'
+        />
+      </linearGradient>
+    </defs>
+  </svg>
+);

@@ -2,14 +2,22 @@
 import { Attribution } from '@/components/Attribution';
 import { CardDetails } from '@/components/CardDetails';
 import { CardForm } from '@/components/CardForm';
-import { initialValues, type FormInputs } from '@/types';
+import type { FormInputs } from '@/types';
 import { FormProvider, useForm } from 'react-hook-form';
 import styles from './CardLayout.module.css';
 
+const initialValues = {
+  number: '',
+  holderName: '',
+  expMonth: '',
+  expYear: '',
+  cvc: '',
+} as const satisfies FormInputs;
+
 const CardLayout = () => {
   const methods = useForm<FormInputs>({
-    delayError: 800,
     mode: 'onChange',
+    delayError: 800,
     defaultValues: initialValues,
   });
 
